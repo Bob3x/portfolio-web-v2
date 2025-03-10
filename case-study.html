@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" type="image/png" href="./images/fav-icon.png" />
+
+
+    <title>
+        bestflix app | Case Study
+    </title>
+
+    <meta name="description"
+        content="Borislav Ginov - Full Stack Web Developer specializing in React, Node.js and responsive web applications">
+    <meta name="keywords" content="Borislav Ginov, Web Developer, React, Node.js, MongoDB, JavaScript, Full Stack" />
+    <link rel="stylesheet" href="index.css" />
+</head>
+
+<body>
+
+    <!-- ***** Header ***** -->
+
+    <header class="header__project" role="banner" id="top">
+        <div class="row">
+            <nav class="nav" role="navigation">
+                <ul class="nav__items">
+                    <li class="nav__item"><a href="#overview" class="nav__link-project">Overview</a></li>
+                    <li class="nav__item">
+                        <a href="#process" class="nav__link-project">Process</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#backend" class="dropdown-item">Backend</a></li>
+                            <li><a href="#frontend" class="dropdown-item">Frontend</a></li>
+                            <li><a href="#user-interface" class="dropdown-item">User Interface</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#conclusion" class="nav__link-project">Conclusion</a>
+                    </li>
+
+                </ul>
+            </nav>
+        </div>
+
+        <div class="header__text-box row">
+            <a href="index.html" class="back-home-button">
+                <span class="back-home-button__icon"></span>
+                <span>Back to Portfolio</span>
+            </a>
+            <div class="header__text">
+                <div class="header_project-image-box">
+                    <img src="./images/bestflix_075.png" class="project-logo" />
+                </div>
+                <p>Discover what you can watch next!<br />
+                    Browse movie catalog and save your
+                    favorites - find more information & where
+                    to watch it. </p>
+                <div class="work__links">
+                    <a href="https://spontaneous-gelato-a5144f.netlify.app" class="link__text-project" target="_blank">
+                        Visit Site <span>&rarr;</span>
+                    </a>
+                    <a href="https://github.com/Bob3x/myFlix-client" target="_blank">
+                        <img src="./images/github.svg" class="work__code" title="View Source Code" alt="GitHub">
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <main role="main">
+
+        <!-- ***** About ***** -->
+
+        <section class="overview" id="overview">
+            <div class="row">
+                <h2 class="section__title">Overview</h2>
+                <div class="overview__content">
+                    <div class="overview__text-box">
+                        <h3>Description</h3>
+                        <p>
+                            bestflix is a full-stack web project containing both server-side and
+                            client-side elements allowing the users to explore a movie catalog.
+                            It has been developed with the MERN Stack for building the API with a database
+                            and the User Interface.
+                            <br>
+                            After Login or creating new
+                            account users can browse through the selection of movies. They can find
+                            brief description about specific movie, its genre and directior.
+                            As well as creating a personal list of favorite movies. In addition users can
+                            search through the catalog and filter it based on the genre.
+                            Users can update their profile, delete it or update their favorite list.
+                        </p>
+                        <p>
+                            This project was an opportunity to develop a comprehensive understanding
+                            of backend API development with Node.js, Express, and MongoDB.
+                            Frontend development with React and Redux.
+                        </p>
+                    </div>
+                    <div class="overview__image-box">
+                        <img src="./images/Main_view_Crop.png" class="overview__image" alt="Project Overview" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="process" id="process">
+            <div class="row">
+                <h2 class="section__title">Development Process</h2>
+                <div class="process__content">
+                    <div class="process__text-backend" id="backend">
+                        <h3>Building API & Data Base - backend</h3>
+                        <p>
+                            Developing the backend API was foundational to the bestflix application, as it
+                            served as the
+                            main data source for the client. This phase involves creating a NoSql data base with MongoDB
+                            where all the movies and
+                            user data is stored and
+                            available for interactions. The API is handling movies, user,s genres, and directors
+                            information.
+                            The goal of this phase was to build a robust and well-structured RESTful API that could
+                            interact with a MongoDB database,
+                            allowing for CRUD (Create, Read, Update, Delete) operations. This included user
+                            authentication and authorization to
+                            secure user data and manage access permissions. As finall step for bestflix API I have used
+                            a powerful tool for creating
+                            a well organized and detailed documentation - Swagger.
+                            <br>
+                            This project was an opportunity to develop a comprehensive understanding
+                            of backend API development with Node.js, Express, and MongoDB.
+                            Frontend development with React and Redux.
+                        </p>
+                    </div>
+                    <div class="process__image-box">
+                        <img src="./images/MERN.png" class="process__image" alt="Project_01" />
+                    </div>
+                    <div class="process__text-frontend" id="frontend">
+                        <h3>Building Client Side - frontend</h3>
+                        <p>For building a single-page web app with responsive and modern design I have worked with React
+                            and Redux. The User
+                            Interface allows smooth operations with the API - login or register, browse the movies
+                            catalog, read the description of a
+                            movie, update user profile, add or remove favorite movies and more. </p>
+                    </div>
+
+                    <div class="process__text-skills">
+                        <h3>Backend & Frontend - skills & tools</h3>
+                        <ul class="skills__list">
+
+                            <li>Defining API endpoints and
+                                routes with Express framework
+                                and middleware functions.</li>
+
+                            <li>Creating NoSQL database
+                                with Mongoose alongside
+                                proper authorization, JWT
+                                authentication and data
+                                validation for secure operations.</li>
+
+                            <li>Using React components
+                                for creating reusable UI
+                                elements and Redux for
+                                managing states, data
+                                flows and complex features.</li>
+
+                            <li>Implementing Bootstrap
+                                responsive system for user
+                                friendly, intuitive and
+                                modern interface.</li>
+                        </ul>
+                    </div>
+
+                    <div class="user__interface" id="user-interface">
+
+                        <h3>User Interface</h3>
+                        <div class="interface__container">
+                            <div class="interface__group">
+                                <h5>Login & Sign Up</h5>
+                                <div class="interface__images">
+                                    <img src="./images/Login_view.jpg" class="interface__image" />
+                                    <img src="./images/SignUp_view.jpg" class="interface__image" />
+                                </div>
+                            </div>
+                            <div class="interface__group">
+                                <h5>Home & Movie View</h5>
+                                <div class="interface__images">
+                                    <img src="./images/Main_view_mockUp.jpg" class="interface__image" />
+                                    <img src="./images/Movie_view.jpg" class="interface__image" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <section class="conclusion" id="conclusion">
+            <div class="row">
+                <h2 class="section__title">Conclusion</h2>
+                <div class="conclusion__content">
+                    <div class="conclusion__column">
+                        <h3> Goals</h3>
+                        <p class="conclusion__text">Building single-page web application as
+                            a full-stack development project from
+                            scratch. With backend and frontend
+                            elements production ready, deployed to
+                            online hosting provider.
+                            bestflix final product published live
+                            and ready for real use. </p>
+                    </div>
+                    <div class="conclusion__column">
+                        <h3>
+                            Challenges</h3>
+                        <p class="conclusion__text">Finding the right tools based on my newly
+                            gained JavaScript skills and learning how
+                            to work with them as well as implementing
+                            their best practices. This involves setting
+                            up database with validation rules,
+                            secure authorization and authentication.
+                            Managing asynchronous request and
+                            response, while keeping UI responsive.
+                            Implementing proper error handling and
+                            providing user with feedback.
+                            Testing the functionality and fixing
+                            strange bugs is the greatest always ongoing
+                            challenge I have ever faced.</p>
+                    </div>
+                    <div class="conclusion__column">
+                        <h3>
+                            Reflection</h3>
+                        <p class="conclusion__text">The bestflix full-stack web application
+                            has its difficulties and challenges I had to
+                            understand and overcome. Through the development
+                            process I was able to improve my
+                            technical skills and to get familiar with established
+                            best practices for functional and
+                            secure backend architecture and dynamic,
+                            responsive frontend.
+                            I’ve gained valuable hands-on experience in
+                            modern web development technologies. It
+                            provides me with further motivation for implementing
+                            new features and making the
+                            app even more usable. </p>
+                    </div>
+                </div>
+                <div class="conclusion__final-thoughts">
+                    <h3>
+                        Final Thoughts</h3>
+                    <p class="conclusion__text">
+                        Overall, this project has been a significant learning experience. It has
+                        provided me with the
+                        opportunity to apply my skills in a real-world scenario and to understand the complexities
+                        involved in full-stack development. I am excited to continue building on this foundation and to
+                        explore new technologies and methodologies in the future.</p>
+                </div>
+                <div class="case-study__cta">
+                    <p>I'm open for collaboration <a href="index.html #contact" class="link__text">Let's connect</a>
+                    </p>
+                </div>
+            </div>
+
+        </section>
+    </main>
+    <footer role="contentinfo" class="footer">
+        <div class="row">
+            <!-- Update the links to point to your accounts -->
+            <ul class="footer__social-links">
+                <li class="footer__social-link-item">
+                    <a href="https://github.com/Bob3x" title="Link to Github Profile" target="_blank">
+                        <img src="./images/github.svg" class="footer__social-image" alt="Github">
+                    </a>
+                </li>
+                <li class="footer__social-link-item">
+                    <a href="https://codepen.io/Bob3x" title="Link to Codepen Profile" target="_blank">
+                        <img src="./images/codepen.svg" class="footer__social-image" alt="Codepen">
+                    </a>
+                </li>
+                <li class="footer__social-link-item">
+                    <a href="https://www.linkedin.com/in/borislav-ginov" target="_blank">
+                        <img src="./images/linkedin.svg" title="Link to Linkedin Profile" class="footer__social-image"
+                            alt="Linkedin">
+                    </a>
+                </li>
+            </ul>
+            <p>
+                &copy; 2025 - designed & developed by <a href="https://bob3x.github.io/portfolio-website" class="link"
+                    target="_blank">me</a>
+            </p>
+        </div>
+    </footer>
+
+    <a href="#top" class="back-to-top-project" title="Back to Top">
+        <img src="./images/arrow-up.svg" alt="Back to Top" class="back-to-top-project__image" />
+    </a>
+    <script src="./index.js"></script>
+</body>
+
+</html>
