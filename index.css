@@ -775,6 +775,10 @@ body:not(.user-is-tabbing) a:focus {
 /* ----- Work ----- */
 /* --------------------------------------- */
 
+.projects {
+    margin-top: var(--gutter-huge);
+}
+
 .work__box {
     display: flex;
     flex-direction: row;
@@ -796,6 +800,10 @@ body:not(.user-is-tabbing) a:focus {
 
 .work__box:not(:last-child) {
     margin-bottom: 25rem;
+}
+
+.work__box:last-child {
+    margin-bottom: var(--gutter-huge);
 }
 
 @media (max-width: 500px) {
@@ -879,6 +887,10 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 @media (max-width: 900px) {
+    .work__links {
+        margin-top: var(--gutter-small);
+    }
+
     .work__code {
         height: 3rem;
     }
@@ -965,8 +977,8 @@ body:not(.user-is-tabbing) a:focus {
 /* --------------------------------------- */
 
 .client {
-    margin-top: var(--gutter-huge);
-    margin-bottom: var(--gutter-huge);
+    margin-top: 90px;
+    margin-bottom: 90px;
 }
 
 .client__logos {
@@ -1001,19 +1013,33 @@ body:not(.user-is-tabbing) a:focus {
 
 .contact {
     margin-top: var(--gutter-huge);
-    padding-bottom: 120px;
+}
+
+.contact__container {
+    margin-bottom: var(--gutter-huge);
+}
+
+@media (max-width: 900px) {
+    .contact__info p {
+        margin-bottom: var(--gutter-medium);
+    }
+    .contact__container {
+        margin-bottom: var(--gutter-medium);
+    }
 }
 
 /* --------------------------------------- */
 /* ----- About ----- */
 /* --------------------------------------- */
-
+.about {
+    padding: 60px 0;
+    margin: 120px auto;
+}
 .about__content {
     display: flex;
     flex-direction: row;
     align-items: center;
     max-width: var(--container-max-width);
-    margin: 0 auto;
     padding: 30px 0;
     gap: 4rem;
     min-height: calc(100vh - var(--gutter-medium) * 2);
@@ -1079,6 +1105,10 @@ body:not(.user-is-tabbing) a:focus {
     .about__content {
         flex-direction: column-reverse;
         align-items: flex-start;
+    }
+
+    .about__text p {
+        margin-bottom: var(--gutter-medium);
     }
 }
 
