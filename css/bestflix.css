@@ -1,0 +1,509 @@
+/* --------------------------------------- */
+/* ----- bestflix - Case Study ----- */
+/* --------------------------------------- */
+
+/* ----- Buttons and Links ----- */
+
+.link__text-project {
+    position: relative;
+    display: inline-block;
+    padding: 0.6rem;
+    color: inherit;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.link__text-project::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    background: var(--gold);
+    height: 2px;
+    z-index: -1;
+    transition: width 0.3s ease;
+}
+
+.link__text-project:focus {
+    outline: none;
+}
+
+.link__text-project:hover {
+    transform: scale(1.1);
+}
+
+.link__text-project:hover::after {
+    width: 100%;
+}
+
+/* --- Back Home Button --- */
+
+.back-home-button {
+    display: inline-flex;
+    align-items: center;
+    font-size: 1.8rem;
+    color: var(--white-1);
+    text-decoration: none;
+    font-weight: 500;
+    background: rgba(25, 25, 25, 0.6);
+    border-left: 2px solid var(--gold);
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    margin-bottom: 2rem;
+}
+
+.back-home-button:hover {
+    background: rgba(45, 45, 45, 0.8);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.back-home-button:hover .back-home-button__icon {
+    transform: translateX(-4px);
+    transition: transform 0.3s ease;
+}
+
+/* Arrow with better visibility */
+.back-home-button__icon {
+    display: inline-block;
+    position: relative;
+    width: 1.8rem;
+    height: 1.2rem;
+    margin-right: 1rem;
+}
+
+.back-home-button__icon::before {
+    content: "";
+    position: absolute;
+    width: 1.5rem;
+    height: 2px;
+    background-color: var(--gold);
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.back-home-button__icon::after {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-left: 2px solid var(--gold);
+    border-bottom: 2px solid var(--gold);
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+}
+
+/* ----- Back to Top Button ----- */
+
+.back-to-top-project {
+    position: fixed;
+    bottom: 4rem;
+    right: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5.5rem;
+    width: 5.5rem;
+    background-color: var(--gold);
+    border-radius: 50%;
+    z-index: 10;
+    visibility: hidden;
+    transition: all 0.4s;
+}
+
+.back-to-top-project__image {
+    height: 70%;
+}
+
+/* ----- Navigation ----- */
+
+.nav__link-project {
+    position: relative;
+    display: inline-block;
+    padding: 1rem 0;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s;
+}
+
+.nav__link-project::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--gold);
+    transition: width 0.3s ease;
+}
+
+.nav__link-project:hover {
+    color: var(--gold);
+}
+
+.nav__link-project:hover::after {
+    width: 100%;
+}
+
+/*--- Dropdown Menu --- */
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgba(20, 20, 20, 0.95);
+    min-width: 180px;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 1rem 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 100;
+    list-style: none;
+    overflow: hidden !important;
+}
+
+.dropdown-item:first-child {
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+}
+
+.dropdown-item:last-child {
+    border-radius: 0 0 8px 8px;
+}
+
+.nav__item:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-item {
+    display: block;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.6rem;
+    color: var(--white-1);
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.dropdown-item:first-child:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-top-left-radius: 8px !important;
+    border-top-right-radius: 8px !important;
+    color: var(--gold);
+    padding-left: 2rem;
+}
+
+.dropdown-item:last-child:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-bottom-left-radius: 8px !important;
+    border-bottom-right-radius: 8px !important;
+}
+
+.dropdown-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--gold);
+    padding-left: 2rem;
+    border-radius: 0 !important;
+}
+
+.dropdown-item:not(:first-child):not(:last-child):hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 0;
+    color: var(--gold);
+    padding-left: 2rem;
+}
+
+/* ----- Header ----- */
+
+.header__project {
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)),
+        url("../assets/images/footer-bg.jpg");
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-size: var(--font-size-normal);
+}
+
+@media (max-width: 500px) {
+    .header__project {
+        text-align: center;
+    }
+}
+
+.section__title::after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 10rem;
+    background: var(--gold);
+    margin: var(--gutter-small) 0;
+}
+
+/* ----- Overview ----- */
+
+.overview__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.overview__text-box {
+    line-height: var(--line-height-small);
+    width: 100%;
+}
+
+.overview__image-box {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.overview__image {
+    width: 100%;
+    border-radius: 12px;
+}
+
+/* ----- Process ----- */
+
+.process {
+    padding: var(--gutter-huge) 0 0 0;
+}
+
+.process__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+
+    .process__text {
+        line-height: normal;
+        font-size: var(--font-size-small);
+    }
+
+    .process__image-box {
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+
+        .process__image {
+            height: 50px;
+        }
+    }
+
+    .process__text-frontend {
+        padding-top: 4rem;
+        line-height: normal;
+        font-size: var(--font-size-small);
+    }
+
+    .process__text-skills {
+        margin: 0;
+        padding-top: 4rem;
+        line-height: var(--line-height-normal);
+        font-size: var(--font-size-small);
+        width: 100%;
+    }
+}
+
+.user__interface {
+    width: 100%;
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: var(--gutter-medium) 0;
+}
+
+.interface__container {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.interface__group {
+    margin-bottom: 2rem;
+}
+
+.interface__images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin: 0 auto;
+}
+
+.interface__image {
+    width: 100%;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+    margin-top: 2rem;
+}
+
+.interface__image:hover {
+    transform: scale(1.01);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .interface__images {
+        grid-template-columns: 1fr;
+    }
+
+    .interface__group {
+        margin-bottom: 3rem;
+    }
+}
+
+/* ----- Conclusion ----- */
+
+.conclusion {
+    margin-top: 60px;
+    padding: var(--gutter-medium) 0;
+    background-color: var(--black);
+}
+
+.conclusion__content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+}
+
+.conclusion__column {
+    position: relative;
+    padding: 2.5rem;
+    border-radius: 8px;
+    background: linear-gradient(145deg, rgba(20, 20, 20, 0.8), rgba(30, 30, 30, 0.8));
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border-bottom: 3px solid var(--gold);
+}
+
+.conclusion__column h3 {
+    font-size: var(--font-size-medium);
+    color: var(--gold);
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.conclusion__column h3::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.8rem;
+    width: 50px;
+    height: 2px;
+    background-color: var(--gold);
+}
+
+.conclusion__text {
+    display: block;
+    line-height: var(--line-height-small);
+    font-size: var(--font-size-small);
+}
+
+.conclusion__final-thoughts {
+    grid-column: 1 / -1;
+    margin-top: 2rem;
+    padding: 2.5rem;
+    border-radius: 8px;
+    background: linear-gradient(145deg, rgba(31, 31, 31, 0.6), rgba(41, 41, 41, 0.6));
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border-bottom: 3px solid var(--gold);
+}
+
+.conclusion__final-thoughts h3 {
+    font-size: var(--font-size-medium);
+    color: var(--gold);
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.conclusion__final-thoughts h3::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.8rem;
+    width: 50px;
+    height: 2px;
+    background-color: var(--gold);
+}
+
+/* Responsive design */
+@media (max-width: 900px) {
+    .conclusion__content {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ----- Case Study "Call-To-Action" ----- */
+
+.case-study__cta {
+    margin-top: 3rem;
+    padding: 2rem;
+    text-align: center;
+    border-radius: 8px;
+    background: linear-gradient(145deg, rgba(48, 48, 48, 0.507), rgba(56, 56, 56, 0.493));
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.case-study__cta::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, var(--pink), var(--gold));
+    border-radius: 8px 8px 0 0;
+}
+
+.case-study__cta p {
+    font-size: var(--font-size-small);
+    line-height: var(--line-height-small);
+    color: var(--white-1);
+}
+
+.case-study__cta .link__text {
+    color: var(--gold);
+    font-weight: 600;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+}
+
+.case-study__cta .link__text:hover {
+    color: var(--pink);
+}
+
+.case-study__cta .link__text::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--pink);
+    transition: width 0.3s ease-in-out;
+}
+
+.case-study__cta .link__text:hover::after {
+    width: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .case-study__cta {
+        margin-top: 2rem;
+        padding: 1.5rem;
+    }
+}
