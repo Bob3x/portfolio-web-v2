@@ -13,6 +13,7 @@
   <meta name="description"
     content="Borislav Ginov - Full Stack Web Developer specializing in React, Node.js and responsive web applications">
   <meta name="keywords" content="Borislav Ginov, Web Developer, React, Node.js, MongoDB, JavaScript, Full Stack" />
+  <link rel="canonical" href="https://www.borislavginov.com/" />
   <link rel="stylesheet" href="./css/index.css" />
 </head>
 
@@ -43,19 +44,30 @@
             <a href="#contact" class="nav__link">Contact</a>
           </li>
         </ul>
+        <div class="language-toggle-container">
+          <span class="language-label">EN</span>
+          <label class="switch">
+            <input type="checkbox" id="language-toggle">
+            <span class="slider raund"></span>
+          </label>
+          <span class="language-label">DE</span>
+        </div>
       </nav>
+
     </div>
     <div class="header__text-box row">
       <div class="header__text">
         <h1 class="heading-primary">
 
-          <span>Hi, I'm Borislav</span>
+          <span data-en="Hi, I'm Borislav" data-de="Hallo, Ich bin Borislav">Hi, I'm Borislav</span>
         </h1>
         <h4 class="heading-secondary">
-          <span>web developer</span>
+          <span data-en="web developer" data-de="webentwickler">web developer</span>
         </h4>
-
-        <p>combining art & design expertise with web development skills to craft meaningful digital experiences.
+        <p data-en="combining art & design expertise with web development skills to craft meaningful digital experiences.
+       I transform creative concepts into user-friendly solutions that make the web a better place." data-de="Ich kombiniere Kunst & Design mit Webentwicklung, um aussagekräftige digitale Erlebnisse zu schaffen. 
+       Ich entwickle benutzerfreundliche Lösungen, die das Web verbessern.">
+          combining art & design expertise with web development skills to craft meaningful digital experiences.
           <br /> I transform creative concepts into user-friendly solutions that make the web a better place.
         </p>
       </div>
