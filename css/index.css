@@ -138,6 +138,7 @@ body {
 
 section {
     padding: var(--gutter-normal) 0;
+    width: 100%;
     border-bottom: var(--border-light);
 }
 
@@ -213,6 +214,10 @@ h1.heading-primary {
     h1.heading-primary {
         font-size: 6.5rem;
     }
+    p {
+        max-width: var(--container-medium-width);
+        margin: 0;
+    }
 }
 
 h2 {
@@ -235,10 +240,15 @@ h3 {
     margin-top: var(--gutter-normal);
 }
 
+p {
+    margin: var(--gutter-small-1) 0;
+}
+
 @media (max-width: 500px) {
     .heading-primary {
         font-size: var(--font-size-large);
         max-width: 80%;
+        text-align: start;
     }
 
     h2 {
@@ -247,17 +257,6 @@ h3 {
 
     h3 {
         font-size: var(--font-size-medium);
-    }
-}
-
-p {
-    margin: var(--gutter-small-1) 0;
-}
-
-@media (max-width: 900px) {
-    p {
-        max-width: var(--container-small-width);
-        margin: 0;
     }
 }
 
@@ -294,8 +293,10 @@ body:not(.user-is-tabbing) a:focus {
     display: inline-block;
     padding: 1rem 4.2rem;
     text-decoration: none;
-    color: inherit;
+    color: var(--white-1);
     border: 2px solid var(--blue);
+    font-family: "Jost", "Inter";
+    font-size: var(--font-size-small);
     font-weight: 400;
 }
 
@@ -433,19 +434,12 @@ body:not(.user-is-tabbing) a:focus {
     font-family: "Jost", "Inter";
     font-size: var(--font-size-normal);
     color: var(--white-1);
-    position: absolute;
     width: auto;
+    position: absolute;
     top: var(--gutter-normal);
     right: var(--gutter-normal);
     margin-left: 20rem;
     z-index: 10;
-}
-
-.row:first-child {
-    position: relative;
-    max-width: var(--container-max-width);
-    margin: 0 auto;
-    padding: 0 var(--gutter-normal);
 }
 
 .nav__item {
@@ -464,7 +458,6 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .nav__link {
-    position: relative;
     display: inline-block;
     padding: 1rem 0;
     text-decoration: none;
@@ -491,77 +484,6 @@ body:not(.user-is-tabbing) a:focus {
 
 .nav__link:hover::after {
     width: 100%;
-}
-
-@media (max-width: 768px) {
-    .nav {
-        position: absolute;
-        top: var(--gutter-normal);
-        right: var(--gutter-normal);
-        width: auto; /* Don't force full width */
-        justify-content: center;
-    }
-
-    /* Keep items from wrapping */
-    .nav__items {
-        flex-wrap: nowrap;
-        overflow-x: visible;
-    }
-
-    /* Make items more compact on mobile */
-    .nav__item:not(:last-child) {
-        margin-right: var(--gutter-small);
-    }
-}
-
-@media (max-width: 500px) {
-    .nav {
-        position: absolute;
-        top: 0;
-        left: 2rem;
-        right: 0;
-        width: auto;
-        padding: 1rem 0.5rem;
-        justify-content: center;
-        flex-direction: row; /* Keep horizontal */
-    }
-
-    .nav__items {
-        margin-right: 0;
-    }
-
-    .nav__link {
-        font-size: 1.8rem;
-        padding: 0.5rem;
-    }
-
-    .nav__item:not(:last-child) {
-        margin-right: 1rem;
-    }
-
-    /* Shrink language toggle on mobile */
-    .language-toggle-container {
-        margin-left: 0;
-    }
-
-    .language-link {
-        margin: 0;
-        padding: 0.25rem; /* Smaller padding */
-    }
-
-    .language-label {
-        font-size: 1.4rem;
-    }
-
-    .language-arrow {
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 300px) {
-    .nav {
-        font-size: var(--font-size-small);
-    }
 }
 
 /* Language toggle */
@@ -602,6 +524,78 @@ body:not(.user-is-tabbing) a:focus {
 .language-link:hover .language-arrow {
     color: var(--blue);
 }
+
+@media (max-width: 768px) {
+    .nav {
+        top: var(--gutter-normal);
+        right: var(--gutter-normal);
+        width: auto;
+        justify-content: center;
+        margin: 0;
+    }
+
+    /* Keep items from wrapping */
+    .nav__items {
+        flex-wrap: nowrap;
+        overflow-x: visible;
+    }
+
+    /* Make items more compact on mobile */
+    .nav__item:not(:last-child) {
+        margin-right: var(--gutter-small);
+    }
+}
+
+@media (max-width: 500px) {
+    .nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: auto;
+        padding: 1rem 0.5rem;
+        justify-content: center;
+        flex-direction: row;
+    }
+
+    .nav__items {
+        margin-right: 0;
+    }
+
+    .nav__link {
+        padding: 0.5rem;
+    }
+
+    .nav__item:not(:last-child) {
+        margin-right: 1rem;
+    }
+
+    /* Shrink language toggle on mobile */
+    .language-toggle-container {
+        margin-left: 0;
+        font-size: 1.2rem;
+    }
+
+    .language-link {
+        margin: 0;
+        padding: 0.25rem; /* Smaller padding */
+    }
+
+    .language-label {
+        font-size: 1.4rem;
+    }
+
+    .language-arrow {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 300px) {
+    .nav {
+        font-size: var(--font-size-small);
+    }
+}
+
 /* --------------------------------------- */
 /* ----- Header ----- */
 /* --------------------------------------- */
@@ -613,7 +607,6 @@ body:not(.user-is-tabbing) a:focus {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    position: relative;
 }
 
 .header__text {
@@ -627,22 +620,38 @@ body:not(.user-is-tabbing) a:focus {
 .header__text p {
     margin: 1.5rem 0 3.5rem;
     max-width: var(--container-medium-width);
-    font-family: "Jost", sans-serif;
+    font-family: "Jost", "Inter";
     color: var(--white-1);
     font-size: var(--font-size-medium);
 }
 
-@media (max-width: 500px) {
-    .header {
-        text-align: center;
+@media (max-width: 900px) {
+    .header__text {
+        max-width: 80%; /* Wider on tablets */
     }
 
     .header__text p {
-        transform: scale(0.8) translateX(-10%);
+        max-width: 100%; /* Full width of parent */
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        background-position: center top;
+        background-size: cover;
+    }
+}
+
+@media (max-width: 500px) {
+    .header {
+        text-align: start;
     }
 
-    p {
+    .header__text p {
+        display: block;
         padding-left: 0;
+        width: 100%;
+        max-width: none;
     }
 }
 
@@ -658,9 +667,9 @@ body:not(.user-is-tabbing) a:focus {
     display: flex;
     flex-direction: row;
     align-items: center;
-    max-width: var(--container-max-width);
+    width: 100%;
     padding: 30px 0;
-    gap: 4rem;
+    gap: 5rem;
     min-height: calc(100vh - var(--gutter-medium) * 2);
 }
 
@@ -693,6 +702,8 @@ body:not(.user-is-tabbing) a:focus {
 
 .about__text {
     flex: 1;
+    color: var(--white-1);
+    font-family: "Inter";
     font-size: var(--font-size-small);
     line-height: 1.45;
 }
@@ -731,11 +742,17 @@ body:not(.user-is-tabbing) a:focus {
     margin-top: var(--gutter-huge);
 }
 
+.work__boxes {
+    max-width: var(--container-max-width); /* Consistent width */
+    width: 100%;
+    margin: 0 auto; /* Center alignment */
+}
+
 .work__box {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 10rem;
+    gap: 5rem;
 }
 
 .work__box:first-child {
@@ -773,6 +790,13 @@ body:not(.user-is-tabbing) a:focus {
 .work__text {
     line-height: 1.5;
     flex: 0 0 30%;
+}
+
+.work__text p {
+    color: var(--white-1);
+    font-family: "Inter";
+    font-weight: 400;
+    font-size: var(--font-size-small);
 }
 
 .work__code-link {
@@ -898,6 +922,9 @@ body:not(.user-is-tabbing) a:focus {
     align-items: center;
     padding: 0.8rem 1.5rem;
     color: var(--white-1);
+    font-family: "Jost", "Inter";
+    font-size: var(--font-size-small);
+    font-weight: 400;
     border-radius: 16px;
     transition: all 0.3s;
     margin-right: 1rem;
@@ -992,7 +1019,9 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .skills__intro-content p {
+    font-family: "Inter", "Jost";
     font-size: var(--font-size-small);
+    font-weight: 400;
     line-height: var(--line-height-normal);
     text-align: left;
     color: var(--white-1);
@@ -1000,6 +1029,8 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .highlight {
+    font-family: "Inter", "Jost";
+    font-size: var(--font-size-small);
     color: var(--blue);
     font-weight: 500;
     position: relative;
@@ -1015,7 +1046,16 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .contact__container {
+    width: 100%;
     margin-bottom: var(--gutter-huge);
+}
+
+.contact__info p {
+    color: var(--white-1);
+    font-family: "Inter", "Jost";
+    font-size: var(--font-size-small);
+    font-weight: 400;
+    line-height: var(--line-height-normal);
 }
 
 @media (max-width: 900px) {
@@ -1054,6 +1094,15 @@ body:not(.user-is-tabbing) a:focus {
 .footer__github-buttons {
     display: flex;
     justify-content: center;
+}
+
+.footer__text,
+.footer__link {
+    font-family: "Inter", "Jost";
+    font-size: var(--font-size-small);
+    font-weight: 400;
+    line-height: var(--line-height-normal);
+    color: var(--white-1);
 }
 
 .footer__github-buttons iframe {
