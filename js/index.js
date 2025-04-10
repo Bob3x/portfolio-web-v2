@@ -14,9 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
     initTypingAnimations();
     initImageAnimations();
 
-    // ===== UI INTERACTIONS =====
-    initExpandableColumns();
-
     // ===== LANGUAGE TOGGLE =====
     initLanguageToggle();
 });
@@ -50,8 +47,18 @@ function initBackToTopButtons() {
 
     if (!backToTopButton && !backToTopButtonProject) return;
 
-    let isBackToTopRendered = false;
-    let isBackToTopProjectRendered = false;
+    // Use regular scroll event (more straightforward)
+    window.addEventListener("scroll", () => {
+        const hasScrolledDown = window.scrollY > 700;
+
+        if (backToTopButton) {
+            alterStyles(backToTopButton, hasScrolledDown);
+        }
+
+        if (backToTopButtonProject) {
+            alterStyles(backToTopButtonProject, hasScrolledDown);
+        }
+    });
 
     const alterStyles = (element, isVisible) => {
         if (!element) return;
@@ -60,18 +67,6 @@ function initBackToTopButtons() {
         element.style.opacity = isVisible ? 1 : 0;
         element.style.transform = isVisible ? "scale(1)" : "scale(0)";
     };
-
-    window.addEventListener("scroll", () => {
-        const shouldShow = window.scrollY > 700;
-
-        if (backToTopButton) {
-            alterStyles(backToTopButton, shouldShow);
-        }
-
-        if (backToTopButtonProject) {
-            alterStyles(backToTopButtonProject, shouldShow);
-        }
-    });
 }
 
 /**
@@ -101,27 +96,12 @@ function initImageAnimations() {
             });
         },
         {
-            threshold: 0.1
+            threshold: 0.1,
+            rootMargin: "0px 0px -100px 0px"
         }
     );
 
     images.forEach((image) => observer.observe(image));
-}
-
-/**
- * Initializes expandable columns in the conclusion section
- */
-function initExpandableColumns() {
-    const columns = document.querySelectorAll(".conclusion__column");
-
-    columns.forEach((column) => {
-        const h3 = column.querySelector("h3");
-        if (h3) {
-            h3.addEventListener("click", () => {
-                column.classList.toggle("active");
-            });
-        }
-    });
 }
 
 /**
@@ -135,14 +115,17 @@ function initLanguageToggle() {
     const currentLang = localStorage.getItem("preferredLanguage") || "en";
     document.documentElement.setAttribute("lang", currentLang);
     updateToggleState(currentLang === "de");
-    translatePage(currentLang);
 
     // Handle language toggle changes
     languageToggle.addEventListener("change", () => {
         const newLang = languageToggle.checked ? "de" : "en";
         localStorage.setItem("preferedLanguage", newLang);
-        document.documentElement.setAttribute("lang", newLang);
-        translatePage(newLang);
+
+        if (newLang === "de") {
+            window.location.href = "/de";
+        } else {
+            window.location.href = "/";
+        }
     });
 }
 
@@ -154,25 +137,4 @@ function updateToggleState(isGerman) {
     if (toggle) {
         toggle.checked = isGerman;
     }
-}
-
-/**
- * Translates page content based on selected language
- */
-function translatePage(language) {
-    const elements = document.querySelectorAll("[data-en], [data-de]");
-
-    elements.forEach((element) => {
-        const translation = element.getAttribute(`data-${language}`);
-        if (translation) {
-            // Store original content if first time tranlating
-            if (!element.hasAttribute("data-original")) {
-                element.setAttribute("data-original", element.innerHTML);
-            }
-            element.innerHTML = translation;
-        } else if (language === "en" && element.hasAttribute("data-original")) {
-            // Restore original English content
-            element.innerHTML = element.getAttribute("data-original");
-        }
-    });
 }
