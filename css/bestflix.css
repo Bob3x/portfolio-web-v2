@@ -8,7 +8,10 @@
     position: relative;
     display: inline-block;
     padding: 0.6rem;
-    color: inherit;
+    color: var(--white-1);
+    font-family: "Jost", "Inter";
+    font-size: var(--font-size-normal);
+    font-weight: 400;
     text-decoration: none;
     transition: transform 0.3s ease;
 }
@@ -34,6 +37,14 @@
     transform: scale(1.1);
 }
 
+.work__code {
+    transition: 0.3s ease;
+}
+
+.work__code:hover {
+    transform: scale(1.1);
+}
+
 .link__text-project:hover::after {
     width: 100%;
 }
@@ -44,6 +55,7 @@
     display: inline-flex;
     align-items: center;
     font-size: 1.8rem;
+    font-family: "Jost", "Inter";
     color: var(--white-1);
     text-decoration: none;
     font-weight: 500;
@@ -257,6 +269,10 @@
     flex-direction: column;
     align-items: center;
     margin-bottom: 60px;
+    color: var(--white-1);
+    font-family: "Inter", sans-serif;
+    font-size: var(--font-size-small);
+    font-weight: 400;
 }
 
 .overview__text-box {
@@ -287,34 +303,50 @@
     align-items: center;
     max-width: var(--container-max-width);
     margin: 0 auto;
+}
 
-    .process__text {
-        line-height: normal;
-        font-size: var(--font-size-small);
-    }
+.process__text {
+    line-height: normal;
+    color: var(--white-1);
+}
 
-    .process__image-box {
-        margin-top: 3rem;
-        margin-bottom: 3rem;
+.process__image-box {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
 
-        .process__image {
-            height: 50px;
-        }
-    }
+.process__image {
+    height: 50px;
+}
 
-    .process__text-frontend {
-        padding-top: 4rem;
-        line-height: normal;
-        font-size: var(--font-size-small);
-    }
+.process__text-backend {
+    padding-top: 4rem;
+    line-height: normal;
+    color: var(--white-1);
+    font-family: "Inter", sans-serif;
+    font-size: var(--font-size-small);
+    font-weight: 400;
+    line-height: var(--line-height-normal);
+}
 
-    .process__text-skills {
-        margin: 0;
-        padding-top: 4rem;
-        line-height: var(--line-height-normal);
-        font-size: var(--font-size-small);
-        width: 100%;
-    }
+.process__text-frontend {
+    padding-top: 4rem;
+    color: var(--white-1);
+    font-family: "Inter", sans-serif;
+    font-size: var(--font-size-small);
+    line-height: var(--line-height-normal);
+    font-weight: 400;
+}
+
+.process__text-skills {
+    margin: 0;
+    padding-top: 4rem;
+    line-height: var(--line-height-normal);
+    width: 100%;
+    color: var(--white-1);
+    font-family: "Inter", sans-serif;
+    font-size: var(--font-size-small);
+    font-weight: 400;
 }
 
 .user__interface {
@@ -407,8 +439,10 @@
 
 .conclusion__text {
     display: block;
-    line-height: var(--line-height-small);
     font-size: var(--font-size-small);
+    line-height: var(--line-height-small);
+    color: var(--white-1);
+    font-family: "Inter", sans-serif;
 }
 
 .conclusion__final-thoughts {
@@ -416,9 +450,14 @@
     margin-top: 2rem;
     padding: 2.5rem;
     border-radius: 8px;
-    background: linear-gradient(145deg, rgba(31, 31, 31, 0.6), rgba(41, 41, 41, 0.6));
+    background: linear-gradient(145deg, rgba(31, 31, 31, 0.444), rgba(41, 41, 41, 0.493));
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     border-bottom: 3px solid var(--gold);
+    color: var(--white-1);
+    font-family: "Inter", sans-serif;
+    font-size: var(--font-size-normal);
+    font-weight: 400;
+    line-height: var(--line-height-normal);
 }
 
 .conclusion__final-thoughts h3 {
@@ -452,8 +491,8 @@
     padding: 2rem;
     text-align: center;
     border-radius: 8px;
-    background: linear-gradient(145deg, rgba(48, 48, 48, 0.507), rgba(56, 56, 56, 0.493));
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(145deg, rgba(48, 48, 48, 0.264), rgba(66, 66, 66, 0.303));
+    /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);*/
     position: relative;
 }
 
@@ -472,6 +511,7 @@
     font-size: var(--font-size-small);
     line-height: var(--line-height-small);
     color: var(--white-1);
+    font-family: "Inter", sans-serif;
 }
 
 .case-study__cta .link__text {
@@ -482,7 +522,7 @@
 }
 
 .case-study__cta .link__text:hover {
-    color: var(--pink);
+    color: var(--blue);
 }
 
 .case-study__cta .link__text::after {
@@ -492,7 +532,7 @@
     left: 0;
     width: 0;
     height: 2px;
-    background-color: var(--pink);
+    background-color: var(--blue);
     transition: width 0.3s ease-in-out;
 }
 
@@ -506,4 +546,13 @@
         margin-top: 2rem;
         padding: 1.5rem;
     }
+}
+
+.footer__text,
+.footer__link {
+    font-family: "Inter", "Jost";
+    font-size: var(--font-size-small);
+    font-weight: 400;
+    line-height: var(--line-height-normal);
+    color: var(--white-1);
 }
