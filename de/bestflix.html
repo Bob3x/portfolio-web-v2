@@ -7,16 +7,19 @@
 
 
     <title>
-        bestflix app | Fallstudie
+        bestflix app | Fallstudie von Borislav Ginov
     </title>
 
     <!-- Meta descriptions -->
     <meta name="description"
-        content="Borislav Ginov - Full Stack Web Developer specializing in React, Node.js and responsive web applications">
-    <meta name="keywords" content="Borislav Ginov, Web Developer, React, Node.js, MongoDB, JavaScript, Full Stack" />
+        content="Eine detaillierte Fallstudie der bestflix App – eine moderne Single-Page-Anwendung zur Filmverwaltung, entwickelt mit React, Bootstrap und einer benutzerdefinierten RESTful API. Mit sicherer Benutzeranmeldung, responsivem Design und dynamischer Filmbrowsing-Funktion.">
+    <meta name="keywords"
+        content="bestflix, Film App, React, JavaScript, REST API, Bootstrap, Webentwickler, Full Stack, Fallstudie, Borislav Ginov" />
+    <meta property="og:locale" content="de_DE" />
     <!-- Language versions -->
     <link rel="alternate" hreflang="en" href="https://www.borislavginov.com/bestflix.html" />
     <link rel="alternate" hreflang="de" href="https://www.borislavginov.com/de/bestflix.html" />
+    <link rel="alternate" hreflang="x-default" href="https://www.borislavginov.com/bestflix.html" />
     <!-- Canonical tag for SEO -->
     <link rel="canonical" href="https://www.borislavginov.com/de/bestflix.html" />
     <!-- Styles and resources -->
@@ -41,7 +44,7 @@
     <header class="header__project" role="banner" id="top">
         <div class="row">
             <nav class="nav" role="navigation">
-                <ul class="nav__items">
+                <ul class="nav__items-project">
                     <li class="nav__item"><a href="#overview" class="nav__link-project">Überblick</a></li>
                     <li class="nav__item">
                         <a href="#process" class="nav__link-project">Prozess</a>
@@ -54,16 +57,23 @@
                     <li class="nav__item">
                         <a href="#conclusion" class="nav__link-project">Fazit</a>
                     </li>
-
                 </ul>
+                <div class="language-toggle-container">
+                    <a href="/bestflix.html" class="language-link" aria-label="Switch to English version">
+                        <span class="language-arrow">→</span>
+                        <span class="language-label">EN</span>
+                    </a>
+                </div>
             </nav>
         </div>
 
         <div class="header__text-box row">
-            <a href="index.html" class="back-home-button">
-                <span class="back-home-button__icon"></span>
-                <span>Zurück zum Portfolio</span>
-            </a>
+            <div class="back-home-button-container">
+                <a href="index.html" class="back-home-button">
+                    <span class="back-home-button__icon"></span>
+                    <span>Zurück zum Portfolio</span>
+                </a>
+            </div>
             <div class="header__text">
                 <div class="header_project-image-box">
                     <img src="../assets/images/bestflix_075.png" class="project-logo" />
@@ -74,7 +84,7 @@
                     du sie ansehen kannst. </p>
                 <div class="work__links">
                     <a href="https://spontaneous-gelato-a5144f.netlify.app" class="link__text-project" target="_blank">
-                        Visit Site <span>&rarr;</span>
+                        Seite besuchen <span>&rarr;</span>
                     </a>
                     <a href="https://github.com/Bob3x/myFlix-client" target="_blank">
                         <img src="../assets/images/github.svg" class="work__code" title="View Source Code" alt="GitHub">
